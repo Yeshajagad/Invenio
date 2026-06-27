@@ -1,3 +1,3 @@
-from .document import Document, ProcessingStatus
+from .document import Document, DocumentChunk, ProcessingStatus
 
-__all__ = ["Document", "ProcessingStatus"]
+__all__ = ["Document", "DocumentChunk", "ProcessingStatus"]

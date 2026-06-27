@@ -8,6 +8,9 @@ from app.config import get_settings
 from app.database import create_tables
 from app.api.routes import documents_router
 
+from app.api.routes import documents_router, processing_router
+
+
 settings = get_settings()
 
 
@@ -37,6 +40,7 @@ app.add_middleware(
 )
 
 app.include_router(documents_router)
+app.include_router(processing_router)
 
 
 @app.get("/", tags=["Health"])
