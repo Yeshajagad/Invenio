@@ -2,24 +2,22 @@ import os
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
 from loguru import logger
 
 from app.config import get_settings
 from app.database import create_tables
+from app.api.routes import documents_router
 
 settings = get_settings()
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Startup
     logger.info(f"🔍 Starting {settings.app_name} v{settings.app_version}")
     os.makedirs(settings.upload_dir, exist_ok=True)
     await create_tables()
     logger.info("✅ Database tables ready")
     yield
-    # Shutdown
     logger.info("👋 Shutting down Invenio")
 
 
@@ -37,6 +35,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(documents_router)
 
 
 @app.get("/", tags=["Health"])
