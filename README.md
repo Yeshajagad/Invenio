@@ -75,7 +75,7 @@ ollama serve
 Download the language model:
 
 ```bash
-ollama pull qwen3:8b
+ollama pull qwen3
 ```
 
 Download the embedding model:
