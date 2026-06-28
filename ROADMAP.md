@@ -6,7 +6,7 @@
 | 2 | Project Setup & Environment | completed
 | 3 | Document Management API | completed
 | 4 | Document Processing Pipeline | completed
-| 5 | Embedding Pipeline | 
+| 5 | Embedding Pipeline | completed
 | 6 | RAG Pipeline | 
 | 7 | LangGraph Multi-Agent System | 
 | 8 | NLP Engine | 
