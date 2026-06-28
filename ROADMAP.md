@@ -4,8 +4,8 @@
 |-------|-------------|--------|
 | 1 | Planning & Folder Structure | completed
 | 2 | Project Setup & Environment | completed
-| 3 | Document Management API | 
-| 4 | Document Processing Pipeline | 
+| 3 | Document Management API | completed
+| 4 | Document Processing Pipeline | completed
 | 5 | Embedding Pipeline | 
 | 6 | RAG Pipeline | 
 | 7 | LangGraph Multi-Agent System | 

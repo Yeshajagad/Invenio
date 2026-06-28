@@ -63,3 +63,14 @@ class DocumentChunk(Base):
         "Document",
         back_populates="chunks",
     )
+class EmbeddingMetadata(Base):
+    __tablename__ = "embedding_metadata"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    chunk_id: Mapped[int] = mapped_column(
+        Integer, ForeignKey("document_chunks.id", ondelete="CASCADE"), nullable=False
+    )
+    document_id: Mapped[int] = mapped_column(Integer, nullable=False)
+    vector_id: Mapped[str] = mapped_column(String(100), nullable=False)
+    embedding_model: Mapped[str] = mapped_column(String(100), nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
